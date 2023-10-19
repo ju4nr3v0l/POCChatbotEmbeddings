@@ -17,7 +17,7 @@ API_KEY=YOUR-OPEAIN-API-KEY
 REDIS_HOST=HOST-REDIS-URL
 REDIS_PORT=REDIS-PORT
 ```
-    - Correr el archivo maint.py
+    - Correr el archivo main.py
 
 ## Consideraciones
 En el archivo functions.py se encuentra la función que se encarga de hacer la petición a la API de OpenAI, 
