@@ -1,4 +1,4 @@
-# POC chatbot creado por juan marulanda utilizados embeddings de OpenAI
+# POC chatbot creado por juan marulanda utilizando embeddings de OpenAI
 
 ## Instalación
     - Instalar Redis
