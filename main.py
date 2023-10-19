@@ -1,8 +1,6 @@
 from flask import Flask,render_template, request
 import functions
 
-from redis_client import RedisClient
-
 app = Flask(__name__)
 
 convesations = []
