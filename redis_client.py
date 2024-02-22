@@ -2,10 +2,11 @@ import redis, json
 from redis.exceptions import  ConnectionError
 
 class RedisClient:
-    def __init__(self, host, port):
+    def __init__(self, host, port, db):
+        self.db = db
         self.host = host
         self.port = port
-        self.redis = redis.Redis(host=self.host, port=self.port)
+        self.redis = redis.Redis(host=self.host, port=self.port, db=self.db, charset="utf-8", decode_responses=True)
 
     def set(self, key, value):
         try:
@@ -16,6 +17,16 @@ class RedisClient:
     def get(self, key):
         try:
             return json.loads(self.redis.get(key))
+        except ConnectionError:
+            print("Connection Error Redis")
+
+    def getAll(self):
+        try:
+            response = []
+            responseRedis = self.redis.keys("*")
+            for key in responseRedis:
+                response.append(key)
+            return response
         except ConnectionError:
             print("Connection Error Redis")
 

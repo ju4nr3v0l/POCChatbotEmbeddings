@@ -17,7 +17,7 @@ def home():
         convesations.append(answer)
         return render_template('index.html', chat=convesations)
     else:
-        return render_template('index.html')
+        return render_template('index.html', chat=convesations)
 if __name__ == '__main__':
     app.run(debug=True, port=4000)
 
